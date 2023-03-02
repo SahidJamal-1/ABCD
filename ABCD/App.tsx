@@ -8,6 +8,7 @@ import ApplicationStatus from './src/navigation/ApplicationStatus';
 import AllScreens from './src/components/AllScreens';
 import CustomSidebarMenu from './src/components/CustomSidebarMenu';
 import HomeScreen from './src/components/HomeScreen';
+import ApplicationApply from './src/navigation/ApplicationApply';
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +28,10 @@ function App() {
             name="Application Status"
             component={ApplicationStatus}
           />
-           
+               <Stack.Screen
+            name="Next"
+            component={ApplicationApply}
+          />
         </Drawer.Navigator>
       )}
     </NavigationContainer>

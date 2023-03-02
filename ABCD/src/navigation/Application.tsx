@@ -1,9 +1,15 @@
 import {View, Text, StyleSheet, TextInput, SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
+import { useNavigation } from '@react-navigation/native';
+
 export default function Application() {
   const data = ['App', 'App1', 'App2', 'App3'];
+  const navigation = useNavigation();
 
+  const handleNextPage = ()=>{
+    navigation.navigate('Next')
+  }
   return (
     <SafeAreaView >
       <Text style={styles.heading}>Select FS service</Text>
@@ -72,7 +78,7 @@ export default function Application() {
   
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleNextPage}>
         <Text style={{color:'white', fontSize:20}}>Next</Text>
       </TouchableOpacity>
     </SafeAreaView>
